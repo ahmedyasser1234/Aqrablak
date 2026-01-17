@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
+import Footer from './components/footer.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import BackgroundEffects from './components/BackgroundEffects.jsx';
 import MotionGraphicsPage from './pages/MotionGraphicsPage.jsx';
