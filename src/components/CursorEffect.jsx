@@ -3,11 +3,17 @@ import React, { useEffect, useState, useRef } from 'react';
 const CursorEffect = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [particles, setParticles] = useState([]);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
   const requestRef = useRef(null);
   const particleIdCounter = useRef(0);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
     const handleMouseMove = (e) => {
+      if (!isDesktop) return;
       setPosition({ x: e.clientX, y: e.clientY });
       
       const newParticle = {
@@ -22,11 +28,18 @@ const CursorEffect = () => {
       setParticles((prev) => [...prev.slice(-20), newParticle]);
     };
 
+    window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isDesktop]);
 
   useEffect(() => {
+    if (!isDesktop) return;
+
     const updateParticles = () => {
       setParticles((prev) =>
         prev
@@ -46,7 +59,10 @@ const CursorEffect = () => {
     return () => {
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
-  }, []);
+  }, [isDesktop]);
+
+  // لا يتم عرض أي شيء في وضع الريسبونسيف
+  if (!isDesktop) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[9999]">

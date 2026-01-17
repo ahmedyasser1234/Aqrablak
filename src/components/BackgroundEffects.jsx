@@ -1,28 +1,27 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 
 const BackgroundEffects = () => {
   const canvasRef = useRef(null);
-  const starsDataRef = useRef(null);
 
-  useEffect(() => {
-    if (starsDataRef.current) return;
-
+  // إعداد بيانات النجوم مع إضافة 50 نجمة في المركز وتصغير الأحجام الكبيرة
+  const starsData = useMemo(() => {
     const starColors = [
-      '#ffffff', '#f8f9fa', '#e3f2fd',
-      '#cde6ffff', '#b5e3f8ff', '#9ceff8ff',
-      '#fff9bfff', '#f8ebabff', '#fafab1ff',
-      '#ffe1baff', '#f8e0bdff'
+      '#ffffff', '#f8f9fa', '#e3f2fd', // أبيض
+      '#cde6ffff', '#b5e3f8ff', '#9ceff8ff', // أزرق كوني
+      '#fff9bfff', '#f8ebabff', '#fafab1ff', // ذهبي
+      '#ffe1baff', '#f8e0bdff'            // برتقالي دافئ
     ];
 
     const allStars = [];
 
     for (let i = 0; i < 5000; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const distanceFactor = (0.2 + Math.random() * 0.8) * 1.1;
+      const distanceFactor = (0.2 + Math.random() * 0.8) * 1.1; // تبدأ من بعد معين لترك مساحة للمركز
       
       allStars.push({
         angle,
         distanceFactor,
+        // تصغير الحجم الأقصى من 2.5 إلى 1.6
         size: Math.pow(Math.random(), 10) * 1.6 + 0.3,
         color: starColors[Math.floor(Math.random() * starColors.length)],
         rotationSpeed: (Math.random() * 0.0006 + 0.0002) * (Math.random() > 0.1 ? 1 : -1),
@@ -33,16 +32,17 @@ const BackgroundEffects = () => {
       });
     }
 
+    // 2. إضافة 50 نجمة بالضبط في المنتصف (Central Stars)
     for (let i = 0; i < 150; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const distanceFactor = Math.random() * 0.30;
+      const distanceFactor = Math.random() * 0.30; // قريبة جداً من المركز
       
       allStars.push({
         angle,
         distanceFactor,
-        size: Math.random() * 1.2 + 0.2,
+        size: Math.random() * 1.2 + 0.2, // أحجام صغيرة وناعمة للمركز
         color: starColors[Math.floor(Math.random() * starColors.length)],
-        rotationSpeed: (Math.random() * 0.0001 + 0.00005),
+        rotationSpeed: (Math.random() * 0.00001 + 0.000005), // أسرع قليلاً في المركز
         blinkSpeed: Math.random() * 0.02 + 0.005, 
         blinkOffset: Math.random() * Math.PI * 2,
         opacityBase: Math.random() * 0.4 + 0.2,
@@ -50,14 +50,21 @@ const BackgroundEffects = () => {
       });
     }
 
-    starsDataRef.current = allStars;
+    return allStars;
   }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !starsDataRef.current) return;
+    if (!canvas) return;
 
-    const ctx = canvas.getContext('2d', { alpha: false });
+    let ctx = null;
+    try {
+      ctx = canvas.getContext('2d', { alpha: false });
+    } catch (e) {
+      console.warn("Could not get canvas context", e);
+      return;
+    }
+
     if (!ctx) return;
 
     let animationFrameId;
@@ -75,8 +82,7 @@ const BackgroundEffects = () => {
     resize();
 
     const render = () => {
-      // تأكد من مسح Canvas بشكل كامل
-      ctx.clearRect(0, 0, width, height);
+      if (!ctx) return;
       ctx.fillStyle = '#080911';
       ctx.fillRect(0, 0, width, height);
 
@@ -84,41 +90,38 @@ const BackgroundEffects = () => {
       const centerY = height / 2;
       const maxRadius = Math.max(width, height) * 0.9;
       
-      // توهج مركزي ناعم
-      const gradient = ctx.createRadialGradient(
-        centerX, centerY, 0, 
-        centerX, centerY, maxRadius * 0.2
-      );
+      // توهج مركزي ناعم جداً
+      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, maxRadius * 0.2);
       gradient.addColorStop(0, 'rgba(10, 20, 50, 0.15)');
       gradient.addColorStop(1, 'rgba(8, 9, 17, 0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
 
-      starsDataRef.current.forEach((star) => {
+      starsData.forEach((star) => {
         star.angle += star.rotationSpeed;
 
         const blink = Math.sin(Date.now() * star.blinkSpeed + star.blinkOffset);
         const currentOpacity = star.opacityBase + (blink * 0.1);
 
         const r = star.distanceFactor * maxRadius;
+        
+        // حركة دائرية انسيابية
         const x = centerX + Math.cos(star.angle) * r;
-        const y = centerY + Math.sin(star.angle) * r + (Math.cos(star.angle) * star.tilt * 20);
+        const y = centerY + Math.sin(star.angle) * r * 1 + (Math.cos(star.angle) * star.tilt * 20);
 
-        ctx.save();
         ctx.beginPath();
         ctx.arc(x, y, star.size, 0, Math.PI * 2);
         ctx.fillStyle = star.color;
         ctx.globalAlpha = Math.max(0.05, Math.min(1, currentOpacity));
         ctx.fill();
-        
-        // تقليل التوهج لتجنب التغطية
+
+        // تقليل تأثير التوهج للنجوم الكبيرة لتكون أهدأ
         if (star.size > 1.5) {
-          ctx.shadowBlur = star.size * 1.0; // قلل من التوهج
-          ctx.shadowColor = star.color;
+            ctx.shadowBlur = star.size * 1.5;
+            ctx.shadowColor = star.color;
         } else {
-          ctx.shadowBlur = 0;
+            ctx.shadowBlur = 0;
         }
-        ctx.restore();
       });
 
       animationFrameId = requestAnimationFrame(render);
@@ -130,17 +133,13 @@ const BackgroundEffects = () => {
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [starsData]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none -z-10"  // تغيير z-index إلى -10
-      style={{ 
-        display: 'block', 
-        background: '#080911',
-        pointerEvents: 'none'
-      }}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ display: 'block', background: '#080911' }}
     />
   );
 };

@@ -58,7 +58,7 @@ const Navbar = () => {
           <img 
             src="/images/Asset 3.png" 
             alt="لوجو أقربلك ميديا" 
-            className="h-16 w-auto object-contain cursor-pointer hover:opacity-80 transition-opacity" 
+            className="h-16 w-auto object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" 
           />
         </Link>
       </div>
@@ -66,6 +66,12 @@ const Navbar = () => {
       {/* المنتصف: روابط التنقل */}
       <nav 
         className={`hidden lg:flex items-center glass-nav px-10 py-3 rounded-full gap-10 transition-all relative overflow-hidden pointer-events-auto ${isCracked ? 'animate-shake' : ''}`}
+        style={{
+          background: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+        }}
       >
         
         {isCracked && (
@@ -80,10 +86,6 @@ const Navbar = () => {
                 <path className="crack-line" d="M200 30 L190 55 L175 60" />
                 <path className="crack-line" d="M200 30 L240 40 L280 45" />
                 <path className="crack-line" d="M200 30 L150 20 L110 15" />
-                <path className="crack-line" d="M190 20 L210 20" strokeWidth="0.3" />
-                <path className="crack-line" d="M180 35 L220 35" strokeWidth="0.3" />
-                <path className="crack-line" d="M170 25 L185 15" strokeWidth="0.2" />
-                <path className="crack-line" d="M230 40 L215 50" strokeWidth="0.2" />
                 <circle cx="200" cy="30" r="1.5" fill="white" />
               </g>
             </svg>
@@ -95,6 +97,7 @@ const Navbar = () => {
           to="/" 
           onClick={() => triggerCrack()}
           className={`text-base font-medium hover:text-blue-400 transition-colors relative z-10 ${location.pathname === '/' ? 'text-blue-400' : 'text-white'}`}
+          style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
         >
           {t('nav.home')}
         </Link>
@@ -104,12 +107,30 @@ const Navbar = () => {
             to="/services"
             onClick={() => triggerCrack()}
             className={`text-base font-medium hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer ${location.pathname.startsWith('/services') ? 'text-blue-400' : 'text-white'}`}
+            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
             {t('nav.services')}
-            <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+            <svg 
+              className="w-4 h-4 transition-transform group-hover:rotate-180" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </Link>
           
-          <div className={`dropdown-content absolute top-full ${language === 'ar' ? 'right-0' : 'left-0'} mt-4 w-56 glass-nav rounded-2xl overflow-hidden shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300`}>
+          <div 
+            className={`dropdown-content absolute top-full ${language === 'ar' ? 'right-0' : 'left-0'} mt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300`}
+            style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '1rem',
+              overflow: 'hidden',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
+            }}
+          >
             <div className="flex flex-col py-2">
               <Link 
                 to="/services" 
@@ -136,6 +157,7 @@ const Navbar = () => {
           to="/about" 
           onClick={() => triggerCrack()} 
           className={`text-base font-medium hover:text-blue-400 transition-colors relative z-10 ${location.pathname === '/about' ? 'text-blue-400' : 'text-white'}`}
+          style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
         >
           {t('nav.about')}
         </Link>
@@ -144,6 +166,7 @@ const Navbar = () => {
           to="/contact" 
           onClick={() => triggerCrack()} 
           className={`text-base font-medium hover:text-blue-400 transition-colors relative z-10 ${location.pathname === '/contact' ? 'text-blue-400' : 'text-white'}`}
+          style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
         >
           {t('nav.contact')}
         </Link>
@@ -154,27 +177,59 @@ const Navbar = () => {
         {/* زر تغيير اللغة */}
         <div 
           onClick={toggleLanguage}
-          className="w-14 h-7 bg-white/5 border border-white/10 rounded-full p-1 flex items-center cursor-pointer relative hover:bg-white/10 transition group"
+          className="relative w-16 h-8 bg-white/5 border border-white/10 rounded-full p-1 flex items-center cursor-pointer hover:bg-white/10 transition-all duration-300 group overflow-hidden"
         >
-          <div className={`w-5 h-5 bg-gray-400 rounded-full transition-transform duration-300 ${language === 'ar' ? 'translate-x-8' : 'translate-x-1'}`}></div>
-          <span className={`absolute ${language === 'ar' ? 'left-2' : 'right-2'} text-[10px] font-bold text-white/40 uppercase pointer-events-none`}>
+          <div 
+            className={`w-6 h-6 bg-gray-400 rounded-full transition-all duration-300 flex items-center justify-center text-[10px] text-black font-bold absolute top-1 shadow-md z-10 ${language === 'ar' ? 'left-1' : 'right-1'}`}
+          >
+            {language.toUpperCase()}
+          </div>
+          
+          <span className={`absolute top-1/2 -translate-y-1/2 text-[10px] font-bold text-white/40 uppercase pointer-events-none transition-all duration-300 z-0 ${language === 'ar' ? 'right-3' : 'left-3'}`}>
             {language === 'ar' ? 'EN' : 'AR'}
           </span>
         </div>
 
         <Link to="/contact">
-          <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/20 transition shadow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          <div 
+            className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/20 transition shadow-inner"
+            style={{
+              boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1)'
+            }}
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="w-6 h-6 text-white" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={1.5} 
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" 
+              />
             </svg>
           </div>
         </Link>
+      </div>
+
+      {/* Mobile Menu Button (اختياري) */}
+      <div className="lg:hidden pointer-events-auto">
+        <button className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <svg 
+            className="w-6 h-6 text-white" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </header>
   );
 };
 
 export default Navbar;
-
-
-
