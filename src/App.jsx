@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
-import Footer from './components/footer.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import BackgroundEffects from './components/BackgroundEffects.jsx';
 import MotionGraphicsPage from './pages/MotionGraphicsPage.jsx';
@@ -14,26 +13,28 @@ import MarketingPage from './pages/MarketingPage.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import SocialSidebar from './components/SocialSidebar.jsx';
 import CursorEffect from './components/CursorEffect.jsx';
-
-const Home = () => (
-  <>
-    <Hero />
-    <Goals />
-    <Ambition />
-    <StudioShowcase />
-    <IdeaPlanting />
-  </>
-);
+import AboutPage from './pages/AboutPage.jsx';
+import ContactPage from './pages/ContactPage.jsx';
+import Home from './pages/Home.jsx';
+import Footer from './components/footer.jsx';
 
 const App = () => {
   return (
-    <div className="min-h-screen text-white relative bg-[#080911] overflow-x-hidden">
-      <BackgroundEffects />
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden">
+      {/* الخلفية المتحركة - في الخلف */}
+      <div className="fixed inset-0 -z-50">
+        <BackgroundEffects />
+      </div>
+      
       <CursorEffect />
       <ScrollToTop />
-      <Navbar />
       <SocialSidebar />
-      <main className="relative z-10">
+      
+      {/* النافبار */}
+      <Navbar />
+      
+      {/* المحتوى الرئيسي */}
+      <main className="flex-grow relative z-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
@@ -44,9 +45,13 @@ const App = () => {
           <Route path="/services/web-design" element={<WebDesignPage />} />
           <Route path="/services/content-writing" element={<ContentWritingPage />} />
           <Route path="/services/marketing" element={<MarketingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
-        <Footer />
       </main>
+      
+      {/* الفوتر - أعلى من الخلفية */}
+      <Footer />
     </div>
   );
 };
