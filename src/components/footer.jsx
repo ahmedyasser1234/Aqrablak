@@ -9,7 +9,7 @@ const Footer = () => {
       {/* خلفية الفوتر */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/public/images/footer.png" 
+          src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686133/footer_cz659n.png" 
           alt="Astronaut on Moon" 
           className={`w-full h-full object-cover object-bottom opacity-80 ${language === 'en' ? 'scale-x-[-1]' : ''}`}
           onError={(e) => {
@@ -58,7 +58,7 @@ const Footer = () => {
         {/* Center Section: Logo & Rights */}
         <div className="w-full md:w-1/3 flex flex-col items-center justify-center gap-3 md:gap-4 text-center order-3 md:order-2">
           <img 
-            src="/public/images/Asset 3.png" 
+            src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686064/Asset_3_ypwlqu.png" 
             alt="Aqrablik Media Logo" 
             className="h-14 md:h-20 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
           />

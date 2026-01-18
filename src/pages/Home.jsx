@@ -12,13 +12,13 @@ const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const sliderData = [
-    { name: t('service.motion'), path: '/services/motion-graphics', image: 'arct.png', color: '#3b82f6' },
-    { name: t('service.montage'), path: '/services/montage', image: 'glax.png', color: '#a855f7' },
-    { name: t('service.photography'), path: '/services/photography', image: 'sharik.png', color: '#22d3ee' },
-    { name: t('service.studio'), path: '/services/studio-rental', image: 'shelter.png', color: '#fb923c' },
-    { name: t('service.web'), path: '/services/web-design', image: 'arct.png', color: '#6366f1' },
-    { name: t('service.content'), path: '/services/content-writing', image: 'glax.png', color: '#38bdf8' },
-    { name: t('service.marketing'), path: '/services/marketing', image: 'sharik.png', color: '#ec4899' },
+    { name: t('service.motion'), path: '/services/motion-graphics', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686440/arct_o02dz4.png", color: '#3b82f6' },
+    { name: t('service.montage'), path: '/services/montage', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686454/glax_asgtg5.png", color: '#a855f7' },
+    { name: t('service.photography'), path: '/services/photography', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686455/sharik_mwmenl.png", color: '#22d3ee' },
+    { name: t('service.studio'), path: '/services/studio-rental', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686457/shelter_i6bufo.png", color: '#fb923c' },
+    { name: t('service.web'), path: '/services/web-design', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686440/arct_o02dz4.png", color: '#6366f1' },
+    { name: t('service.content'), path: '/services/content-writing', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686454/glax_asgtg5.png", color: '#38bdf8' },
+    { name: t('service.marketing'), path: '/services/marketing', image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686455/sharik_mwmenl.png", color: '#ec4899' },
   ];
 
   const scrollToIndex = (index) => {
@@ -81,7 +81,7 @@ const Hero = () => {
           <div className="flex flex-col items-center lg:items-start text-center lg:text-start w-full relative">
             
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-14 md:h-14 z-50 animate-orbit pointer-events-none hidden md:block">
-              <img src="/public/images/Asset 1.png" alt="شهاب مداري" className="w-full h-full object-contain brightness-110 drop-shadow-[0_0_10px_rgba(232,232,232,0.1)]" />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768684802/Asset_1_fwpljm.png" alt="شهاب مداري" className="w-full h-full object-contain brightness-110 drop-shadow-[0_0_10px_rgba(232,232,232,0.1)]" />
             </div>
 
             <ScrollReveal className="flex items-center gap-4 mb-0 md:mb-2 opacity-80 relative mx-auto lg:mx-0">
@@ -93,7 +93,7 @@ const Hero = () => {
 
             <ScrollReveal delay={0.2} className="relative mb-1 md:mb-6 w-full">
               <div className="absolute end-full top-0 lg:top-1/2 -translate-y-1/2 w-16 h-16 lg:w-44 lg:h-44 animate-float z-40 pointer-events-none translate-x-1/2 lg:translate-x-0 opacity-30 lg:opacity-100">
-                <img src="/public/images/Asset 1.png" alt="نيزك ثابت" className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,255,255,0.15)]" />
+                <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768684802/Asset_1_fwpljm.png" alt="نيزك ثابت" className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,255,255,0.15)]" />
               </div>
               <h1 className="text-3xl md:text-6xl lg:text-[7rem] text-white glow-text leading-[1.1] md:leading-[0.85] font-black">
                 {t('hero.title')}
@@ -124,7 +124,7 @@ const Hero = () => {
 
         <div className="relative w-full max-w-full flex items-center justify-center">
           <div className="absolute start-2 top-1/4 w-12 h-12 md:w-48 md:h-48 z-40 animate-float opacity-30 md:opacity-90 pointer-events-none">
-            <img src="/public/images/Asset 1.png" className="w-full h-full object-contain -rotate-12" />
+            <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768684802/Asset_1_fwpljm.png" className="w-full h-full object-contain -rotate-12" />
           </div>
 
           <div 
@@ -135,7 +135,7 @@ const Hero = () => {
           >
             <div className="relative w-[80px] md:w-[240px] animate-float mb-4 md:mb-0">
               <img 
-                src="/public/images/ccc.png" 
+                src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768684802/Asset_1_fwpljm.png" 
                 alt="رائد فضاء" 
                 className={`w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] ${language === 'en' ? 'scale-x-[-1]' : ''}`}
               />
@@ -207,7 +207,7 @@ const Goals = () => {
           {/* رائد الفضاء - يسار دائماً */}
           <div className="w-[40%] animate-float pointer-events-none z-40">
             <img 
-              src="/public/images/cccc.png" 
+              src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686175/cccc_irddlo.png" 
               alt="رائد فضاء" 
               className="w-full h-auto opacity-100"
             />
@@ -216,7 +216,7 @@ const Goals = () => {
           {/* لوحة الهدف - يمين دائماً */}
           <div className="w-[30%] animate-float pointer-events-none z-40" style={{ animationDelay: '1s' }}>
             <img 
-              src="/public/images/Asset 8.png" 
+              src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686171/Asset_8_rhau52.png" 
               alt="لوحة الهدف" 
               className="w-full h-auto opacity-100"
             />
@@ -226,7 +226,7 @@ const Goals = () => {
         {/* صور الديسكتوب - مخفية في الموبايل ومتموضعة بشكل مطلق في الكمبيوتر */}
         <div className="hidden md:block absolute left-[-130px] top-[-55%] -translate-y-1/2 w-[300px] pointer-events-none z-40 animate-float opacity-100">
           <img 
-            src="/public/images/cccc.png" 
+            src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686175/cccc_irddlo.png" 
             alt="رائد فضاء" 
             className={`w-full h-auto ${language === 'en' ? 'scale-x-[1]' : ''}`}
             onError={(e) => { e.target.style.display = 'none'; }}
@@ -247,7 +247,7 @@ const Goals = () => {
         <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[250px] pointer-events-none z-40 opacity-100">
           <div className="relative animate-float" style={{ animationDelay: '1s' }}>
             <img 
-              src="/public/images/Asset 8.png" 
+              src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686171/Asset_8_rhau52.png" 
               alt="لوحة الهدف" 
               className={`w-full h-auto ${language === 'en' ? 'scale-x-[1]' : ''}`}
               onError={(e) => { e.target.style.display = 'none'; }}
@@ -274,7 +274,7 @@ const Ambition = () => {
           : 'md:right-10 md:left-auto'
       }`}>
         <img 
-          src={language === 'en' ? '/public/images/xxxxx.png' : '/public/images/xxxxx.png'} 
+          src={language === 'en' ? 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768753480/FLAG_REVARS_fyvedl.png' : 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686185/xxxxx_chyx9k.png'} 
           alt="Astronaut holding flag" 
           className="w-full h-auto drop-shadow-[0_0_60px_rgba(255,255,255,0.15)] opacity-100"
           onError={(e) => { e.target.style.opacity = '1'; }}
@@ -321,7 +321,7 @@ const StudioShowcase = () => {
         {/* حاوية الصورة الرئيسية بتصميم منحني يشبه سفينة الفضاء */}
         <div className="relative aspect-[21/9] w-full overflow-hidden border-y border-white/5 shadow-[0_0_100px_rgba(0,0,0,0.5)]">
           <img 
-            src="/public/images/zzzz.png" 
+            src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686177/zzzz_rprsbt.png"
             alt="Studio Preview" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onError={(e) => {

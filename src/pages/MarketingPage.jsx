@@ -22,7 +22,7 @@ const MarketingPage = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <ScrollReveal delay={0.3}>
-            <img src="/public/images/Asset 6@2x.png" alt="رائد فضاء مسوق" className="w-full animate-float" />
+            <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686481/Asset_6_2x_wo2ndl.png" alt="رائد فضاء مسوق" className="w-full animate-float" />
           </ScrollReveal>
         </div>
       </section>

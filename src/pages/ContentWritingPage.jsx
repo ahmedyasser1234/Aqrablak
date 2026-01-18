@@ -22,7 +22,7 @@ const ContentWritingPage = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <ScrollReveal delay={0.3}>
-            <img src="/public/images/Asset 5@2x.png" alt="رائد فضاء كاتب" className="w-full animate-float" />
+            <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686499/Asset_5_2x_vcffi4.png" alt="رائد فضاء كاتب" className="w-full animate-float" />
           </ScrollReveal>
         </div>
       </section>

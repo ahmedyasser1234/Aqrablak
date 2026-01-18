@@ -4,13 +4,13 @@ const SocialSidebar = () => {
   const [isAtBottom, setIsAtBottom] = useState(false);
 
   const socialLinks = [
-    { id: 'facebook', name: 'Facebook', icon: '/public/images/Asset 15.png', url: 'https://www.facebook.com/profile.php?id=61575001066937' },
-    { id: 'tiktok', name: 'TikTok', icon: '/public/images/Asset 16.png', url: 'https://www.tiktok.com/@aqrablaak' },
-    { id: 'instagram', name: 'Instagram', icon: '/public/images/insta.png', url: 'https://www.instagram.com/aqrablaak/' },
-    { id: 'X', name: 'X', icon: '/public/images/Asset 17.png', url: 'https://x.com/aqrablaak' },
-    { id: 'youtyube', name: 'youtube', icon: '/public/images/Asset 18.png', url: 'https://www.youtube.com/@aqrablaak' },
-    { id: 'whatsapp', name: 'WhatsApp', icon: '/public/images/Asset 14.png', url: 'https://wa.me/201099822822' }, 
-    { id: 'phone', name: 'Phone', icon: '/public/images/phon.png', url: 'tel:+201099822822' }, 
+    { id: 'facebook', name: 'Facebook', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685537/Asset_15_lzcgst.png', url: 'https://www.facebook.com/profile.php?id=61575001066937' },
+    { id: 'tiktok', name: 'TikTok', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685642/Asset_16_oexox9.png', url: 'https://www.tiktok.com/@aqrablaak' },
+    { id: 'instagram', name: 'Instagram', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685753/insta_kgp3t4.png', url: 'https://www.instagram.com/aqrablaak/' },
+    { id: 'X', name: 'X', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685753/Asset_17_ivb4u9.png', url: 'https://x.com/aqrablaak' },
+    { id: 'youtyube', name: 'youtube', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685753/Asset_18_kehltv.png', url: 'https://www.youtube.com/@aqrablaak' },
+    { id: 'whatsapp', name: 'WhatsApp', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685752/Asset_14_r8nlkf.png', url: 'https://wa.me/201099822822' }, 
+    { id: 'phone', name: 'Phone', icon: 'https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768685753/phon_rgoezo.png', url: 'tel:+201099822822' }, 
   ];
 
   // تعريف المجموعات

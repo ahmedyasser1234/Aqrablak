@@ -16,10 +16,10 @@ const montageVideos = [
 ];
 
 const webProjects = [
-  { image: "/public/images/arct.png", url: "https://architectegypt.com" },
-  { image: "/public/images/glax.png", url: "https://galaxyrepairuae.com" },
-  { image: "/public/images/sharik.png", url: "https://sharke1.netlify.app" },
-  { image: "/public/images/shelter.png", url: "https://shelterhouseofcheese.com" }
+ { image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686440/arct_o02dz4.png", url: "https://architectegypt.com" },
+  { image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686454/glax_asgtg5.png", url: "https://galaxyrepairuae.com" },
+  { image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686455/sharik_mwmenl.png", url: "https://sharke1.netlify.app" },
+  { image: "https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686457/shelter_i6bufo.png", url: "https://shelterhouseofcheese.com" }
 ];
 
 const ServicesPage = () => {
@@ -123,7 +123,7 @@ const ServicesPage = () => {
       {/* Header Section */}
       <section className="relative h-[60vh] md:h-[80vh] flex flex-col items-center justify-center text-center px-10 pb-10 md:pb-20">
         <ScrollReveal className="absolute top-[33%] left-[45%] -translate-x-1/2 -translate-y-1/2 mt-5 md:mt-0 w-20 h-20 md:w-[12rem] md:h-[12rem] pointer-events-none z-20">
-          <img src="/public/images/Asset 1.png" alt="Asteroid" className="w-full h-full object-contain brightness-90 animate-float" />
+          <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768684802/Asset_1_fwpljm.png" alt="Asteroid" className="w-full h-full object-contain brightness-90 animate-float" />
         </ScrollReveal>
         <div className="flex flex-col items-center">
           <ScrollReveal direction="down">
@@ -134,7 +134,7 @@ const ServicesPage = () => {
               <h2 className="text-5xl md:text-[6.5rem] glow-text leading-[0.8] mt-16 md:mt-32 z-30 -translate-y-[30px] font-black">{t('services.main_title')}</h2>
             </ScrollReveal>
             <ScrollReveal className={`absolute ${language === 'ar' ? '-right-10 md:-right-30' : '-left-10 md:-left-30'} top-[60%] md:top-[70%] w-10 h-10 md:w-20 md:h-20 animate-float pointer-events-none z-40`} delay={0.4}>
-              <img src="/public/images/Asset 1.png" alt="Small Rock" className="w-full h-full object-contain brightness-75 rotate-45" />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768684802/Asset_1_fwpljm.png" alt="Small Rock" className="w-full h-full object-contain brightness-75 rotate-45" />
             </ScrollReveal>
           </div>
         </div>
@@ -146,7 +146,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
           <div className="w-full lg:w-2/5 flex justify-center relative lg:-mt-80 z-50 order-1 mb-8 md:mb-0">
             <ScrollReveal direction={language === 'ar' ? 'right' : 'left'} className="relative w-48 h-48 md:w-[28rem] md:h-[28rem] animate-float">
-              <img src="/public/images/Asset 2@2x.png" alt="Motion Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686487/Asset_2_2x_qaiojz.png" alt="Motion Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
             </ScrollReveal>
           </div>
           <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-start order-2">
@@ -185,7 +185,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
           <div className="w-full lg:w-2/5 flex justify-center relative lg:-mt-[140px] z-50 order-1 lg:order-2 mb-8 md:mb-0">
             <ScrollReveal direction={language === 'ar' ? 'left' : 'right'} className="relative w-48 h-48 md:w-[32rem] md:h-[32rem] animate-float" style={{ animationDelay: '1s' }}>
-              <img src="/public/images/xxx.png" alt="Montage Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686469/xxx_yv639q.png" alt="Montage Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
             </ScrollReveal>
           </div>
           <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-end text-center lg:text-end order-2 lg:order-1">
@@ -224,7 +224,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
           <div className="w-full lg:w-2/5 flex justify-center relative lg:-mt-20 z-50 order-1 mb-8 md:mb-0">
             <ScrollReveal direction={language === 'ar' ? 'right' : 'left'} className="relative w-48 h-48 md:w-[28rem] md:h-[28rem] animate-float">
-              <img src="/public/images/Asset 3@2x.png" alt="Photography Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686527/Asset_3_2x_wt6qwj.png" alt="Photography Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
             </ScrollReveal>
           </div>
           <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-start order-2">
@@ -244,7 +244,7 @@ const ServicesPage = () => {
       {/* Studio Rental Section */}
       <section className="relative min-h-[60vh] md:min-h-[100vh] flex flex-col items-center justify-center text-center py-12">
         <div className="absolute inset-0 z-0">
-          <img src="/public/images/bbb.png" alt="Studio Background" className={`w-full h-full object-cover ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+          <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686452/bbb_k3mvpy.png" alt="Studio Background" className={`w-full h-full object-cover ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
           <div className="absolute inset-0 bg-gradient-to-b from-[#080911]/80 via-transparent to-[#080911]/80"></div>
         </div>
         <div className="relative z-10 px-10">
@@ -265,7 +265,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
           <div className="w-full lg:w-2/5 flex justify-center relative lg:-mt-[300px] z-50 order-1 lg:order-2 mb-8 md:mb-0">
             <ScrollReveal direction={language === 'ar' ? 'left' : 'right'} className="relative w-48 h-48 md:w-[32rem] md:h-[32rem] animate-float" style={{ animationDelay: '1s' }}>
-              <img src="/public/images/Asset 4@2x.png" alt="Web Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686522/Asset_4_2x_vu9c2h.png" alt="Web Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
             </ScrollReveal>
           </div>
           <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-end text-center lg:text-end order-2 lg:order-1">
@@ -306,7 +306,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
           <div className="w-full lg:w-2/5 flex justify-center relative lg:-mt-20 z-50 order-1 mb-8 md:mb-0">
             <ScrollReveal direction={language === 'ar' ? 'right' : 'left'} className="relative w-48 h-48 md:w-[28rem] md:h-[28rem] animate-float">
-              <img src="/public/images/Asset 5@2x.png" alt="Content Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686499/Asset_5_2x_vcffi4.png" alt="Content Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
             </ScrollReveal>
           </div>
           <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-start order-2">
@@ -328,7 +328,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
           <div className="w-full lg:w-2/5 flex justify-center relative lg:mt-[200px] z-50 order-1 lg:order-2 mb-8 md:mb-0">
             <ScrollReveal direction={language === 'ar' ? 'left' : 'right'} className="relative w-48 h-48 md:w-[32rem] md:h-[32rem] animate-float" style={{ animationDelay: '1.5s' }}>
-              <img src="/public/images/Asset 6@2x.png" alt="Marketing Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
+              <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686481/Asset_6_2x_wo2ndl.png" alt="Marketing Astronaut" className={`w-full h-auto ${language === 'en' ? 'scale-x-[-1]' : ''}`} />
             </ScrollReveal>
           </div>
           <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-end text-center lg:text-end order-2 lg:order-1">

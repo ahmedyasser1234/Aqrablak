@@ -22,7 +22,7 @@ const PhotographyPage = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <ScrollReveal delay={0.3}>
-            <img src="/public/images/Asset 3@2x.png" alt="رائد فضاء مصور" className="w-full animate-float drop-shadow-[0_0_50px_rgba(59,130,246,0.3)]" />
+            <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686527/Asset_3_2x_wt6qwj.png" alt="رائد فضاء مصور" className="w-full animate-float drop-shadow-[0_0_50px_rgba(59,130,246,0.3)]" />
           </ScrollReveal>
         </div>
       </section>

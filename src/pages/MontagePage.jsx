@@ -22,7 +22,7 @@ const MontagePage = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <ScrollReveal delay={0.3}>
-            <img src="/public/images/xxx.png" className="w-full animate-float drop-shadow-[0_0_50px_rgba(168,85,247,0.3)]" />
+            <img src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686469/xxx_yv639q.png" className="w-full animate-float drop-shadow-[0_0_50px_rgba(168,85,247,0.3)]" />
           </ScrollReveal>
         </div>
       </section>

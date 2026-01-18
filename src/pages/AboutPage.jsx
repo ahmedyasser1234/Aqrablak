@@ -14,7 +14,7 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <img 
-              src="/public/images/Asset 3.png" 
+              src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686064/Asset_3_ypwlqu.png" 
               alt="عن أقربلك ميديا"
               className="rounded-3xl shadow-2xl w-full"
             />

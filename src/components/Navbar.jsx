@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className={`flex items-center ${language === 'ar' ? 'mr-12' : 'ml-12'} pointer-events-auto`}>
         <Link to="/" className="relative z-50">
           <img 
-            src="/images/Asset 3.png" 
+            src="https://res.cloudinary.com/dk3wwuy5d/image/upload/v1768686064/Asset_3_ypwlqu.png" 
             alt="لوجو أقربلك ميديا" 
             className="h-16 w-auto object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" 
           />
